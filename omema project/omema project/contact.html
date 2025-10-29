@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Café Aroma</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">z
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+ <header>
+        <nav>
+            <div class="logo">
+                <img src="./Screenshot 2025-08-13 013254.png" alt="">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menue.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="overlay">
+      <h1>Get in Touch ☕</h1>
+      <p>We’d love to hear from you! Let’s stay connected.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <div class="info-card">
+      <i class="fa-solid fa-location-dot"></i>
+      <h3>Visit Us</h3>
+      <p>123 Coffee Street, Karachi, Pakistan</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fa-solid fa-phone"></i>
+      <h3>Call Us</h3>
+      <p>+92 300 1234567</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fa-solid fa-envelope"></i>
+      <h3>Email</h3>
+      <p>hello@cafearoma.com</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form-section">
+    <div class="form-container">
+      <h2>Send Us a Message</h2>
+      <form id="cafearoma-contact">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea
+          name="message"
+          placeholder="Write your message..."
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-container">
+    <h2>Find Us Here</h2>
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Karachi+Pakistan&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <div class="map-label">☕ Café Aroma – Karachi</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    
+    <p>© 2025 Cafe Aroma. All rights reserved</p>
+    <p>📍 123 Coffee Street, Karachi, Pakistan</p>
+    <p>☎ +92 300 1234567</p>
+  
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
