@@ -2,137 +2,609 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about Cozy Café — born from a love of coffee, comfort, and community in Karachi. Discover our story, cozy ambiance, and dedication to quality taste.">
+    <meta name="description" content="Learn the story behind Cozy Café Karachi — founded with passion for coffee, comfort, and community. Discover our journey, cozy ambiance, and commitment to serving high-quality brews, desserts, and unforgettable café experiences.">
     <title>About Cozy Café | Our Story & Passion for Great Coffee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
- <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./favicon.png">
 </head>
+<style>
+    /* ===== HERO SECTION ===== */
+    .about-hero {
+        display: flex;
+        align-items: center;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+    }
+    
+    .about-hero-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #3a2317;
+        line-height: 1.2;
+    }
+    
+    .about-hero-content p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    .about-hero-image {
+        flex: 1;
+        max-width: 500px;
+    }
+    
+    .about-hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    }
+    .about-hero-image img:hover{
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    
+    .features-list {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #3a2317;
+    }
+    
+    /* ===== OUR STORY SECTION ===== */
+    .our-story {
+        padding: 80px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .story-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .story-image {
+        flex: 1;
+    }
+    
+    .story-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .story-image img:hover{
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    
+    .story-text {
+        flex: 1;
+    }
+    
+    .story-text h2 {
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .story-text p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    /* ===== OUR VALUES SECTION ===== */
+    .our-values {
+        padding: 80px 0;
+        background-color: #fff;
+    }
+    
+    .values-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .values-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 50px;
+    }
+    
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .value-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .an {
+        color: #5a3727;
+    }
+    .value-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .value-card i {
+        font-size: 2.5rem;
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .value-card h3 {
+        color: #3a2317;
+        margin-bottom: 15px;
+    }
+    
+    .value-card p {
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    /* ===== COFFEE SOURCING SECTION ===== */
+    .coffee-sourcing {
+        padding: 80px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .sourcing-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .sourcing-image {
+        flex: 1;
+    }
+    
+    .sourcing-image img {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 30rem;
+        height: auto;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .sourcing-image img:hover{
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    
+    .sourcing-text {
+        flex: 1;
+    }
+    
+    .sourcing-text h2 {
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .sourcing-text p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #5a3727;
+    }
+    
+    /* ===== TEAM SECTION ===== */
+    .our-team {
+        padding: 80px 0;
+        background-color: #fff;
+    }
+    
+    .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .team-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 50px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .our-values{
+      background-color: bisque;
+    }
+    .team-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+    
+    .team-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .team-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .team-card h4 {
+        padding: 15px 20px 5px;
+        margin: 0;
+        color: #3a2317;
+    }
+    
+    .team-card p {
+        padding: 0 20px 20px;
+        margin: 0;
+        color: #666;
+    }
+    
+    /* ===== MISSION & VISION ===== */
+    .mission-vision {
+        padding: 80px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .mv-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+    
+    .mv-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .mv-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .mv-card i {
+        font-size: 3rem;
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .mv-card h3 {
+        color: #3a2317;
+        margin-bottom: 15px;
+    }
+    
+    .mv-card p {
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    /* ===== BUTTON STYLES ===== */
+    .btn-main {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #3a2317;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-main:hover {
+        background-color: #5a3727;
+        color: white;
+    }
+    
+    .link {
+        color: #3a2317;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .link:hover {
+        text-decoration: underline;
+    }
+    
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+        .about-hero,
+        .story-content,
+        .sourcing-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .about-hero-content,
+        .story-text,
+        .sourcing-text {
+            padding-right: 0;
+        }
+        
+        .about-hero-image,
+        .story-image,
+        .sourcing-image {
+            max-width: 100%;
+        }
+        
+        .features-list {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .about-hero-content h1 {
+            font-size: 2rem;
+        }
+        
+        .values-grid,
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .about-hero-content h1 {
+            font-size: 1.8rem;
+        }
+        
+        .features-list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
 <body>
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-        <img src="./cozy-cafe-logo.jpg" alt="Cozy Café official logo">
-      </a>
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./cozy-cafe-logo.jpg" alt="Cozy Café official logo">
+            </a>
 
-      <!-- Mobile Toggle Button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <!-- Right Side Menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./menue.html">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<div class="aboutussec">
-<section class="aboutsec">
+            <!-- Right Side Menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./menue.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="aboutus">
-    <h1>About Café Aroma</h1>
-    <p>Started as a cozy corner for friends and family in Karachi, <strong>Café Aroma</strong> has grown into a beloved spot 
-       for coffee lovers and dessert enthusiasts. We proudly serve hand-picked coffee beans, freshly baked croissants, 
-       and homemade treats crafted with care. Our goal is simple — to create a warm, welcoming space where every cup tells 
-       a story and every flavor feels like home. Curious to taste what we’re known for? 
-       <a href="menue.html" class="link">Check out our menu</a> or 
-       <a href="contact.html" class="link">get in touch</a> to plan your next visit.</p>
+    <!-- ===== ABOUT HERO SECTION ===== -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Cozy Café Karachi</h1>
+            <p>Started as a cozy corner for friends and family in Karachi, <strong>Cozy Café Karachi</strong> has grown into a beloved spot 
+               for coffee lovers and dessert enthusiasts. We proudly serve hand-picked coffee beans, freshly baked croissants, 
+               and homemade treats crafted with care. Our goal is simple — to create a warm, welcoming space where every cup tells 
+               a story and every flavor feels like home.</p>
+            
+            <p>Located in the heart of Karachi, our café has become a destination for those seeking not just exceptional coffee, 
+               but a genuine sense of community. We believe that great coffee has the power to bring people together, spark conversations, 
+               and create moments of joy in everyday life. <a href="./contact.html " class="an">Get in touch</a> today and experience the warm hospitality of Cozy Café Karachi.</p>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-coffee"></i>
+                    <span>Locally roasted beans</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bread-slice"></i>
+                    <span>Fresh bakes every morning</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-wifi"></i>
+                    <span>Free Wi-Fi & comfy seating</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <a href="menue.html" class="btn-main">See Our Menu</a>
+                <a href="contact.html" class="btn-main" style="margin-left: 15px;">Visit Us</a>
+            </div>
+        </div>
+        <div class="about-hero-image">
+            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1200" alt="Cozy Café interior">
+        </div>
+    </section>
 
+    <!-- ===== OUR STORY SECTION ===== -->
+    <section class="our-story">
+        <div class="story-content">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200" alt="Coffee being poured">
+            </div>
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>Cozy Café Karachi began in 2018 as a small dream shared by three friends who were passionate about coffee and community. 
+                   What started as a tiny corner shop with just a handful of tables has blossomed into a beloved gathering place for 
+                   coffee enthusiasts, students, professionals, and families across Karachi.</p>
+                
+                <p>Our journey began with a simple mission: to create a space where people could enjoy exceptional coffee in a warm, 
+                   welcoming environment. We spent months researching coffee beans from around the world, perfecting our brewing techniques, 
+                   and designing a space that would feel like a home away from home.</p>
+                
+                <p>Today, we're proud to serve hundreds of customers daily, each one becoming part of our extended family. From our first 
+                   cup of coffee to our latest seasonal specialty, everything we do is guided by our passion for quality and our commitment 
+                   to creating meaningful connections.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="container">
-        <ul>
-          <li>☕ Locally roasted beans</li>
-          <li>🥐 Fresh bakes every morning</li>
-          <li>💻 Free Wi-Fi & comfy seating</li>
-        </ul>
-    </div>
-</div>    
-<div class="about-photo">
-    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1200" alt="">
-</div>
+    <!-- ===== OUR VALUES SECTION ===== -->
+    <section class="our-values">
+        <div class="values-container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality First</h3>
+                    <p>Each cup is crafted with care using rich, specialty-grade coffee beans for the perfect taste. We never compromise on quality.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Cozy Vibes</h3>
+                    <p>Soft lighting, calm music, and a welcoming atmosphere — perfect for work or relaxation. We've designed every detail with your comfort in mind.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>We host book clubs, open mics, and offer discounts to students and artists alike. Our café is a space for connection and creativity.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to reducing our environmental footprint through ethical sourcing, biodegradable packaging, and energy-efficient practices.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Customer Care</h3>
+                    <p>Your satisfaction is our priority. We listen to your feedback and continuously improve to ensure every visit exceeds your expectations.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Continuous Learning</h3>
+                    <p>Our team regularly participates in coffee workshops and training to stay updated on the latest brewing techniques and flavor profiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- ===== COFFEE SOURCING SECTION ===== -->
+    <section class="coffee-sourcing">
+        <div class="sourcing-content">
+            <div class="sourcing-image">
+                <img src="./coffee-bean.jpg" alt="Premium coffee beans from sustainable farms">
+            </div>
+            <div class="sourcing-text">
+                <h2>Our Coffee Sourcing</h2>
+                <p>At Cozy Café Karachi, we believe that exceptional coffee begins with exceptional beans. That's why we've established 
+                   direct relationships with coffee farmers in Colombia, Ethiopia, Brazil, and Guatemala. These partnerships ensure that 
+                   we receive the highest quality beans while supporting sustainable farming practices and fair compensation for growers.</p>
+                
+                <p>Our coffee beans are carefully selected based on their flavor profile, growing conditions, and harvesting methods. 
+                   Each batch is roasted in-house by our expert roasters who adjust their techniques to bring out the unique characteristics 
+                   of each bean variety. This attention to detail results in a diverse menu of coffees that cater to different taste 
+                   preferences, from bright and fruity to deep and chocolatey.</p>
+                
+                <p>We're committed to reducing our environmental footprint through various initiatives, including composting coffee grounds, 
+                   using biodegradable packaging, and implementing energy-efficient equipment throughout our café. When you enjoy a cup 
+                   of coffee at Cozy Café, you're not just treating yourself – you're supporting a more sustainable coffee industry.</p>
+            </div>
+        </div>
+    </section>
 
- <div class="ourpromise">
-    <h2>Our Promises</h2>
-    <div class="promises">
-      <div class="promise">
-        <h3>Quality First</h3>
-        <p>Each cup is crafted with care using rich, specialty-grade coffee beans for the perfect taste.</p>
-      </div>
-      <div class="promise">
-        <h3>Cozy Vibes</h3>
-        <p>Soft lighting, calm music, and a welcoming atmosphere — perfect for work or relaxation.</p>
-      </div>
-      <div class="promise">
-        <h3>Community</h3>
-        <p>We host book clubs, open mics, and offer discounts to students and artists alike.</p>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- ===== MISSION & VISION ===== -->
+    <section class="mission-vision">
+        <div class="mv-container">
+            <div class="mv-card">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h3>Our Mission</h3>
+                <p>To serve premium coffee crafted with care and to make every customer feel at home. We strive to create a welcoming space 
+                   where people can connect, work, and relax while enjoying exceptional coffee and food.</p>
+            </div>
+            <div class="mv-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Our Vision</h3>
+                <p>To spread the love for coffee across Pakistan by creating meaningful café experiences. We aim to become a benchmark for 
+                   quality coffee and hospitality in the region while maintaining our commitment to sustainability and community.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== MEET OUR TEAM ===== -->
+    <section class="our-team">
+        <div class="team-container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="./head-barista.jpg" alt="Head barista preparing coffee" />
+                    <h4>Ali Khan</h4>
+                    <p>Head Barista</p>
+                </div>
+                <div class="team-card">
+                    <img src="./operations-manager.jpg" alt="Operations manager at Cozy Café" />
+                    <h4>Hamza Malik</h4>
+                    <p>Operations Manager</p>
+                </div>
+                <div class="team-card">
+                    <img src="./pastry-chef.jpg" alt="Pastry chef decorating dessert" />
+                    <h4>Sarah Ahmed</h4>
+                    <p>Pastry Chef</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p class="quote">“Good ideas start with great coffee.” ☕</p>
+        <p class="info">© 2025 Cozy Café Karachi | Karachi, Pakistan</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </footer>
 
-  <!-- ===== MISSION & VISION ===== -->
-  <section class="mission-vision">
-    <div class="mv-card">
-      <i class="fa-solid fa-mug-hot"></i>
-      <h3>Our Mission</h3>
-      <p>To serve premium coffee crafted with care and to make every customer feel at home.</p>
-    </div>
-    <div class="mv-card">
-      <i class="fa-solid fa-heart"></i>
-      <h3>Our Vision</h3>
-      <p>To spread the love for coffee across Pakistan by creating meaningful café experiences.</p>
-    </div>
-  </section>
-
-  <!-- ===== MEET OUR TEAM ===== -->
-  <section class="our-team">
-    <h2>Meet Our Team</h2>
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="./head-barista.jpg" alt="Head barista preparing coffee" />
-        <h4>Ali Khan</h4>
-        <p>Head Barista</p>
-      </div>
-      <div class="team-card">
-        <img src="./operations-manager.jpg" alt="Operations manager at Cozy Café" />
-        <h4>Hamza Malik</h4>
-        <p>Operations Manager</p>
-      </div>
-      <div class="team-card">
-        <img src="./pastry-chef.jpg" alt="Pastry chef decorating dessert" />
-        <h4>Sarah Ahmed</h4>
-        <p>Pastry Chef</p>
-      </div>
-    </div>
-  </section>
-
-<footer class="footer">
-  <p class="quote">“Good ideas start with great coffee.” ☕</p>
-  <p class="info">© 2025 Café Aroma | Karachi, Pakistan</p>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

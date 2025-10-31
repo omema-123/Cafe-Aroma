@@ -2,13 +2,440 @@
 <html lang="en">
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the Cozy Café menu — from creamy cappuccino and iced latte to freshly baked butter croissants, sandwiches, and desserts. Taste Karachi’s favorite café delights.">
-    <title>Cozy Café Menu | Coffee, Desserts & Fresh Snacks in Karachi</title>
+   <meta name="description" content="Discover the full Cozy Café menu in Karachi — from aromatic espresso, cappuccino, and iced lattes to freshly baked croissants, sandwiches, and sweet desserts. Taste the city’s favorite café flavors, made with love and premium ingredients.">
+   <title>Cozy Café Menu | Coffee, Desserts & Fresh Snacks in Karachi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="./favicon.png">
 </head>
+<style>
+    /* ===== MENU HERO SECTION ===== */
+    .menu-hero {
+        display: flex;
+        align-items: center;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+    }
+    
+    .menu-hero-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .menu-hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #3a2317;
+        line-height: 1.2;
+    }
+    
+    .menu-hero-content p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    .menu-hero-image {
+        flex: 1;
+        max-width: 500px;
+    }
+    
+    .menu-hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .menu-hero-image img:hover{
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* ===== MENU CATEGORIES ===== */
+    .menu-categories {
+        padding: 40px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .categories-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .categories-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 40px;
+    }
+    
+    .category-tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    
+    .category-tab {
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 2px solid #3a2317;
+        border-radius: 30px;
+        color: #3a2317;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .category-tab:hover, .category-tab.active {
+        background-color: #3a2317;
+        color: white;
+    }
+    
+    /* ===== MENU ITEMS ===== */
+    .menu-section {
+        padding: 60px 0;
+        background-color: #FFF3E0;
+    }
+    
+    .menu-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .menu-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 50px;
+    }
+    
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .menu-item {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .menu-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .menu-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .item-text {
+        padding: 20px;
+    }
+    
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .item-header h5 {
+        margin: 0;
+        color: #3a2317;
+        font-size: 1.2rem;
+    }
+    
+    .price {
+        font-weight: 600;
+        color: #3a2317;
+    }
+    
+    .item-text p {
+        margin: 0;
+        color: #666;
+        line-height: 1.5;
+    }
+    
+    /* ===== INGREDIENTS SECTION ===== */
+    .ingredients-section {
+        padding: 80px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .ingredients-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .ingredients-image {
+        flex: 1;
+    }
+    
+    .ingredients-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    .ingredients-image img:hover{
+        transform: scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
 
+    .ingredients-text {
+        flex: 1;
+    }
+    
+    .ingredients-text h2 {
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .ingredients-text p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    /* ===== SPECIAL OFFERS SECTION ===== */
+    .special-offers {
+        padding: 80px 0;
+        background-color: #fff;
+    }
+    
+    .offers-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .offers-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 50px;
+    }
+    
+    .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .offer-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+    
+    .offer-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .offer-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #e74c3c;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    
+    .offer-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .offer-text {
+        padding: 20px;
+    }
+    
+    .offer-text h3 {
+        color: #3a2317;
+        margin-bottom: 10px;
+    }
+    
+    .offer-text p {
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    
+    .offer-price {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .original-price {
+        text-decoration: line-through;
+        color: #999;
+    }
+    
+    .discounted-price {
+        font-weight: 600;
+        color: #3a2317;
+        font-size: 1.2rem;
+    }
+    
+    /* ===== DIETARY OPTIONS SECTION ===== */
+    .dietary-options {
+        padding: 80px 0;
+        background-color: #f8f5f2;
+    }
+    
+    .dietary-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .dietary-container h2 {
+        text-align: center;
+        color: #3a2317;
+        margin-bottom: 50px;
+    }
+    
+    .dietary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .dietary-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .dietary-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .dietary-card i {
+        font-size: 2.5rem;
+        color: #3a2317;
+        margin-bottom: 20px;
+    }
+    
+    .dietary-card h3 {
+        color: #3a2317;
+        margin-bottom: 15px;
+    }
+    
+    .dietary-card p {
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    /* ===== CALL TO ACTION ===== */
+    .menu-cta {
+        padding: 80px 0;
+        background-color: #3a2317;
+        color: white;
+        text-align: center;
+    }
+    
+    .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .cta-container h2 {
+        margin-bottom: 20px;
+    }
+    
+    .cta-container p {
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    
+    .btn-main {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: white;
+        color: #3a2317;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .btn-main:hover {
+        background-color: #f8f5f2;
+        color: #3a2317;
+    }
+    
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+        .menu-hero,
+        .ingredients-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .menu-hero-content,
+        .ingredients-text {
+            padding-right: 0;
+        }
+        
+        .menu-hero-image,
+        .ingredients-image {
+            max-width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .menu-hero-content h1 {
+            font-size: 2rem;
+        }
+        
+        .menu-grid,
+        .offers-grid,
+        .dietary-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .menu-hero-content h1 {
+            font-size: 1.8rem;
+        }
+        
+        .category-tabs {
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+    }
+</style>
 <body>
        <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -43,187 +470,296 @@
     </div>
   </nav>
 
-    <section class="section">
-        <h1>Our Menu</h1>
-        <div class="divs">
-            <div class="div1"><strong>Hot Coffee</strong></div>
-            <div class="div2"><strong>Cold Coffee</strong></div>
-            <div class="div3"><strong>Tea</strong></div>
-            <div class="div4"><strong>pastries</strong></div>
-            <div class="div5"><strong> Sendwitches</strong></div>
-            <div class="div6"><strong>Smoothies & Milkshakes</strong></div>
-            <div class="div7"><strong>Specialty Drinks</strong></div>
+    <!-- ===== MENU HERO SECTION ===== -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1>Our Menu</h1>
+            <p>At <strong>Cozy Café Karachi</strong>, we take pride in offering a diverse menu that caters to all tastes and preferences. 
+               From our expertly crafted coffee beverages to our freshly baked pastries and hearty meals, every item on our menu 
+               is prepared with the finest ingredients and a passion for exceptional flavor.</p>
+            
+            <p>Whether you're starting your day with a robust espresso, enjoying a leisurely lunch with friends, or treating yourself 
+               to a decadent dessert, our menu has something to satisfy every craving. We source our ingredients locally whenever 
+               possible and update our offerings seasonally to ensure the freshest, most delicious options for our valued customers.</p>
         </div>
-        
-<div class="menu-grid">
-
-<div class="menu1">
-    <img src="./espresso-shot.jpg" alt="Strong and freshly brewed espresso">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Espresso</h5>
-            <div class="price">Rs. 350</div>
+        <div class="menu-hero-image">
+            <img src="./exterior-pic.jpg" alt="Coffee and pastries from Cozy Café">
         </div>
-        <p>Rich and bold single shot.</p>
-    </div>
-</div>
-
-
-<div class="menu2">
-    <img src="./iced-latte-menu.jpg" alt="Chilled iced latte served in glass">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Iced Latte</h5>
-            <div class="price">Rs. 520</div>
-        </div>
-        <p>Chilled milk with espresso shot.</p>
-    </div>
-</div>
-
-
-<div class="menu3">
-    <img src="./masala-chai-cup.jpg" alt="Traditional masala chai with spices">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Masala Chai</h5>
-            <div class="price">Rs. 260</div>
-        </div>
-        <p>Spiced milk tea, café favorite.</p>
-    </div>
-</div>
-
-
-<div class="menu4">
-    <img src="./chocolate-brownie-dessert.jpg" alt="Rich chocolate brownie with nut">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Chocolate Brownie</h5>
-            <div class="price">Rs. 350</div>
-        </div>
-        <p>Soft, gooey, and decadent.</p>
-    </div>
-</div>
-
-
-<div class="menu5">
-    <img src="./cappuccino-menu.jpg" alt="Hot cappuccino with smooth milk foam">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Cappuccino</h5>
-            <div class="price">Rs. 480</div>
-        </div>
-        <p>Velvety foam with a strong base.</p>
-    </div>
-</div>
-
-
-<div class="menu6">
-    <img src="./butter-croissant-favorite.jpg" alt="Golden flaky butter croissant">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Butter Croissants</h5>
-            <div class="price">Rs. 320</div>
-        </div>
-        <p>Flaky, buttery, fresh-baked.</p>
-    </div>
-</div>
-
-<div class="menu7">
-    <img src="./refreshing-drinks.jpg" alt="Variety of refreshing drinks">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Drinks</h5>
-            <div class="price">Rs. 280</div>
-        </div>
-        <p>Refreshing beverages to energize you</p>
-    </div>
-</div>
-
-<div class="menu8">
-    <img src="./colorful-mocktails.jpg" alt="Assorted colorful mocktails served chilled">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Mocktails</h5>
-            <div class="price">Rs. 350</div>
-        </div>
-        <p>Flavorful non-alcoholic blended drinks</p>
-    </div>
-</div>
-
-<div class="menu9">
-    <img src="./creamy-milkshake.jpg" alt="Thick and creamy milkshake glass">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Milkshakes</h5>
-            <div class="price">Rs. 400</div>
-        </div>
-        <p>Creamy, chilled, and delightfully sweet</p>
-    </div>
-</div>
-
-<div class="menu10">
-    <img src="./snacks-and-sides.jpg" alt="">
-    <div class="item-text">
-        <div class="item-header">
-            <h5>Snacks & Sides</h5>
-            <div class="price">Rs. 500</div>
-        </div>
-        <p>Light bites to complement meals</p>
-    </div>
-</div>
-
-<div class="menu11">
-  <img src="./fruit-bowl.jpg" alt="Fresh fruit bowl with yogurt">
-  <div class="item-text">
-    <div class="item-header">
-      <h5>Fruit Bowl</h5>
-      <div class="price">Rs. 450</div>
-    </div>
-    <p>Seasonal fruits with a yogurt drizzle.</p>
-  </div>
-</div>
-
-<div class="menu12">
-  <img src="./maple-pancakes.jpg" alt="Fluffy pancakes with maple syrup">
-  <div class="item-text">
-    <div class="item-header">
-      <h5>Maple Pancakes</h5>
-      <div class="price">Rs. 620</div>
-    </div>
-    <p>Fluffy pancakes topped with syrup and butter.</p>
-  </div>
-</div>
-
-<div class="menu13">
-  <img src="./creamy-pasta.jpg" alt="Creamy Alfredo pasta served hot">
-  <div class="item-text">
-    <div class="item-header">
-      <h5>Creamy Alfredo Pasta</h5>
-      <div class="price">Rs. 890</div>
-    </div>
-    <p>Rich creamy sauce with penne and herbs.</p>
-  </div>
-</div>
-
-<div class="menu14">
-  <img src="./cheesecake-slice.jpg" alt="Classic New York cheesecake slice">
-  <div class="item-text">
-    <div class="item-header">
-      <h5>Cheesecake</h5>
-      <div class="price">Rs. 550</div>
-    </div>
-    <p>Silky, creamy, and topped with berry glaze.</p>
-  </div>
-</div>
-
-
     </section>
+
+    <!-- ===== MENU CATEGORIES ===== -->
+    <section class="menu-categories">
+        <div class="categories-container">
+            <h2>Explore Our Categories</h2>
+            <div class="category-tabs">
+                <div class="category-tab active">All Items</div>
+                <div class="category-tab">Hot Coffee</div>
+                <div class="category-tab">Cold Coffee</div>
+                <div class="category-tab">Tea</div>
+                <div class="category-tab">Pastries</div>
+                <div class="category-tab">Sandwiches</div>
+                <div class="category-tab">Smoothies & Milkshakes</div>
+                <div class="category-tab">Specialty Drinks</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU ITEMS SECTION ===== -->
+    <section class="menu-section">
+        <div class="menu-container">
+            <h2>Our Signature Offerings</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="./espresso-shot.jpg" alt="Strong and freshly brewed espresso">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Espresso</h5>
+                            <div class="price">Rs. 350</div>
+                        </div>
+                        <p>Rich and bold single shot of our premium coffee blend, perfectly extracted for a concentrated flavor experience.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./cappuccino-menu.jpg" alt="Hot cappuccino with smooth milk foam">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Cappuccino</h5>
+                            <div class="price">Rs. 480</div>
+                        </div>
+                        <p>Velvety foam with a strong espresso base. Our signature cappuccino combines perfectly steamed milk with rich espresso.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./iced-latte-menu.jpg" alt="Chilled iced latte served in glass">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Iced Latte</h5>
+                            <div class="price">Rs. 520</div>
+                        </div>
+                        <p>Chilled milk with espresso shot. Cool, creamy, and perfectly balanced for those warm Karachi days.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./masala-chai-cup.jpg" alt="Traditional masala chai with spices">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Masala Chai</h5>
+                            <div class="price">Rs. 260</div>
+                        </div>
+                        <p>Spiced milk tea, café favorite. Our traditional recipe combines aromatic spices with rich black tea and milk.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./butter-croissant-favorite.jpg" alt="Golden flaky butter croissant">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Butter Croissants</h5>
+                            <div class="price">Rs. 320</div>
+                        </div>
+                        <p>Flaky, buttery, fresh-baked. Made with premium European butter using traditional French techniques.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./chocolate-brownie-dessert.jpg" alt="Rich chocolate brownie with nut">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Chocolate Brownie</h5>
+                            <div class="price">Rs. 350</div>
+                        </div>
+                        <p>Soft, gooey, and decadent. Our homemade brownies are rich with premium chocolate and topped with walnuts.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./creamy-milkshake.jpg" alt="Thick and creamy milkshake glass">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Milkshakes</h5>
+                            <div class="price">Rs. 400</div>
+                        </div>
+                        <p>Creamy, chilled, and delightfully sweet. Available in chocolate, vanilla, strawberry, and seasonal flavors.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./colorful-mocktails.jpg" alt="Assorted colorful mocktails served chilled">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Mocktails</h5>
+                            <div class="price">Rs. 350</div>
+                        </div>
+                        <p>Flavorful non-alcoholic blended drinks. Refreshing combinations of fruits, herbs, and spices.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./fruit-bowl.jpg" alt="Fresh fruit bowl with yogurt">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Fruit Bowl</h5>
+                            <div class="price">Rs. 450</div>
+                        </div>
+                        <p>Seasonal fruits with a yogurt drizzle. A healthy and refreshing option featuring the freshest local produce.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./maple-pancakes.jpg" alt="Fluffy pancakes with maple syrup">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Maple Pancakes</h5>
+                            <div class="price">Rs. 620</div>
+                        </div>
+                        <p>Fluffy pancakes topped with syrup and butter. A breakfast favorite served with fresh berries and whipped cream.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./creamy-pasta.jpg" alt="Creamy Alfredo pasta served hot">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Creamy Alfredo Pasta</h5>
+                            <div class="price">Rs. 890</div>
+                        </div>
+                        <p>Rich creamy sauce with penne and herbs. Our homemade Alfredo sauce is prepared with fresh cream and parmesan.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./cheesecake-slice.jpg" alt="Classic New York cheesecake slice">
+                    <div class="item-text">
+                        <div class="item-header">
+                            <h5>Cheesecake</h5>
+                            <div class="price">Rs. 550</div>
+                        </div>
+                        <p>Silky, creamy, and topped with berry glaze. Our New York style cheesecake is baked in-house daily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INGREDIENTS SECTION ===== -->
+    <section class="ingredients-section">
+        <div class="ingredients-content">
+            <div class="ingredients-image">
+                <img src="./full-menu.jpg" alt="Fresh ingredients used at Cozy Café">
+            </div>
+            <div class="ingredients-text">
+                <h2>Quality Ingredients, Exceptional Taste</h2>
+                <p>At Cozy Café Karachi, we believe that great food starts with great ingredients. That's why we're committed to sourcing 
+                   the finest products from local suppliers and trusted international partners. Our coffee beans are selected from 
+                   sustainable farms in Colombia, Ethiopia, Brazil, and Guatemala, ensuring that every cup you enjoy supports ethical 
+                   practices while delivering exceptional flavor.</p>
+                
+                <p>Our kitchen works with local farmers to bring you the freshest seasonal produce, while our bakery uses premium 
+                   European butter and high-quality flour to create our signature pastries. We never use artificial flavors, preservatives, 
+                   or additives in our food – just pure, honest ingredients prepared with care and creativity.</p>
+                
+                <p>Whether you're enjoying our signature coffee, indulging in a freshly baked pastry, or savoring one of our hearty meals, 
+                   you can taste the difference that quality ingredients make in every bite.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPECIAL OFFERS SECTION ===== -->
+    <section class="special-offers">
+        <div class="offers-container">
+            <h2>Seasonal Specials & Combos</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">Limited Time</div>
+                    <img src="./summer-special-drink.jpg" alt="Summer special drink">
+                    <div class="offer-text">
+                        <h3>Summer Special Iced Coffee</h3>
+                        <p>Our refreshing blend of cold brew coffee with tropical fruit infusions and a hint of mint. Perfect for beating the Karachi heat!</p>
+                        <div class="offer-price">
+                            <span class="original-price">Rs. 550</span>
+                            <span class="discounted-price">Rs. 450</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Best Value</div>
+                    <img src="./breakfast-combo.jpg" alt="Breakfast combo meal">
+                    <div class="offer-text">
+                        <h3>Morning Energizer Combo</h3>
+                        <p>Start your day right with a choice of coffee, a fresh pastry, and a fruit bowl. The perfect breakfast to fuel your morning!</p>
+                        <div class="offer-price">
+                            <span class="original-price">Rs. 950</span>
+                            <span class="discounted-price">Rs. 750</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Weekend Special</div>
+                    <img src="./brunch-special.jpg" alt="Weekend brunch special">
+                    <div class="offer-text">
+                        <h3>Weekend Brunch Platter</h3>
+                        <p>Available only on Saturdays and Sundays. Enjoy our signature pancakes, eggs, bacon, and coffee for a perfect weekend treat!</p>
+                        <div class="offer-price">
+                            <span class="original-price">Rs. 1200</span>
+                            <span class="discounted-price">Rs. 950</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIETARY OPTIONS SECTION ===== -->
+    <section class="dietary-options">
+        <div class="dietary-container">
+            <h2>Dietary Options</h2>
+            <div class="dietary-grid">
+                <div class="dietary-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Vegetarian</h3>
+                    <p>A wide selection of vegetarian options including salads, sandwiches, pastries, and plant-based milk alternatives for your coffee.</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Vegan</h3>
+                    <p>Delicious vegan choices including plant-based milk alternatives, dairy-free pastries, and hearty meals prepared without any animal products.</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-bread-slice"></i>
+                    <h3>Gluten-Free</h3>
+                    <p>Gluten-free bread and pastry options available. Our staff is happy to assist with any questions about ingredients and preparation methods.</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Low Sugar</h3>
+                    <p>Health-conscious options with reduced sugar content, including unsweetened beverages and naturally sweetened desserts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="menu-cta">
+        <div class="cta-container">
+            <h2>Ready to Taste the Difference?</h2>
+            <p>Visit Cozy Café Karachi today and experience our carefully crafted menu in a warm, welcoming atmosphere. 
+               Whether you're meeting friends, working remotely, or simply taking a break, we have the perfect food and drink 
+               to make your visit memorable.</p>
+            <a href="contact.html" class="btn-main">Find Us & Order</a>
+        </div>
+    </section>
+
 <footer class="footer">
-  <p class="quote">“Good ideas start with great coffee.” ☕</p>
-  <p class="info">© 2025 Café Aroma | Karachi, Pakistan</p>
+  <p class="quote">"Good ideas start with great coffee." ☕</p>
+  <p class="info">© 2025 Cozy Café Karachi | Karachi, Pakistan</p>
   <div class="social-icons">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
   </div>
 </footer>
 

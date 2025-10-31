@@ -2,14 +2,318 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cozy Café in Karachi offers freshly brewed coffee, homemade desserts, and a cozy place to relax. Visit us for the best cappuccino, croissants, and warm café vibes in town.">
+  <meta name="description" content="Welcome to Cozy Café Karachi — your perfect spot for freshly brewed coffee, creamy cappuccinos, butter croissants, and homemade desserts. Enjoy a relaxing café experience with warm vibes, great taste, and friendly service.">
   <title>Cozy Café Karachi | Freshly Brewed Coffee, Desserts & Snacks</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
+<style>
+  /* ===== HERO SECTION FIX ===== */
+  .section1 {
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .mainline {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .mainline h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3a2317;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  
+  .mainline p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .img {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .div12 {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .btn-main {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3a2317;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-main:hover {
+    background-color: #5a3727;
+    color: white;
+  }
+  
+  .btn-main-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #3a2317;
+    text-decoration: none;
+    border: 2px solid #3a2317;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .btn-main-outline:hover {
+    background-color: #3a2317;
+    color: white;
+  }
+  
+  .link {
+    color: #3a2317;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== COFFEE SOURCING SECTION ===== */
+  .coffee-sourcing {
+    padding: 80px 0;
+    background-color: #f8f5f2;
+  }
+  .coffee-sourcing h2{
+    text-align: center;
+  }
+  .sourcing-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
+  .sourcing-image {
+    flex: 1;
+  }
+
+  .sourcing-image img {
+    width: 45rem;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+
+  .sourcing-image img:hover{
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .sourcing-text {
+    flex: 1;
+  }
+
+  .sourcing-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* ===== EVENTS & COMMUNITY SECTION ===== */
+  .events-community {
+    padding: 80px 0;
+    background-color: #FBEED7;
+  }
+
+  .events-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .events-content p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+    font-family: 'UnifrakturCook', cursive;
+    color: #5a3727;
+  }
+
+  /* ===== ENHANCED CARD STYLES ===== */
+  .card-custom {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-custom img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-custom h4 {
+    padding: 15px 20px 5px;
+    margin: 0;
+    color: #3a2317;
+    font-size: 1.3rem;
+  }
+
+  .card-custom p {
+    padding: 0 20px 20px;
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+  }
+  .events-community h2{
+    text-align: center;
+  }
+  /* ===== ENHANCED REVIEW STYLES ===== */
+  .review {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .review:hover {
+    transform: translateY(-5px);
+  }
+
+  .review p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .review h4 {
+    margin: 0;
+    color: #3a2317;
+    font-weight: 600;
+  }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 992px) {
+    .section1 {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .mainline {
+      padding-right: 0;
+      order: 2;
+    }
+    
+    .img {
+      order: 1;
+      max-width: 100%;
+    }
+    
+    .mainline h1 {
+      white-space: normal;
+    }
+    
+    .div12 {
+      justify-content: center;
+    }
+    
+    .sourcing-content {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .sourcing-image,
+    .sourcing-text {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .coffee-sourcing,
+    .events-community {
+      padding: 60px 0;
+    }
+    
+    .events-content p {
+      text-align: left;
+    }
+    
+    .review-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .mainline h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-custom img {
+      height: 150px;
+    }
+    
+    .card-custom h4 {
+      font-size: 1.1rem;
+    }
+    
+    .card-custom p {
+      font-size: 0.9rem;
+    }
+    
+    .mainline h1 {
+      font-size: 1.8rem;
+    }
+    
+    .div12 {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn-main, .btn-main-outline {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+  }
+</style>
 <body>
   <!-- ===== NAVBAR ===== -->
    <nav class="navbar navbar-expand-lg">
@@ -53,6 +357,13 @@
          Take a peaceful break, unwind with friends, and let the comforting flavors bring you joy. 
          Want to know what makes us special? <a href="about.html" class="link">Learn more about our story</a> or 
          <a href="menue.html" class="link">explore our menu</a> filled with your favorite coffees and desserts.</p>
+      
+      <p>Located in the heart of Karachi, our café has become a beloved destination for coffee enthusiasts and food lovers alike. 
+         We source our coffee beans directly from sustainable farms, ensuring that every cup you enjoy supports ethical practices 
+         while delivering exceptional flavor. Our skilled baristas are passionate about their craft, taking time to perfect each 
+         drink according to your preferences. Whether you're starting your day with a robust espresso, enjoying a leisurely afternoon 
+         with a creamy latte, or indulging in one of our signature desserts, Cozy Café Karachi provides the perfect backdrop for 
+         creating memorable moments.</p>
 
       <div class="div12">
         <a href="menue.html" class="btn-main">See Our Menu</a>
@@ -72,20 +383,49 @@
       <div class="card-custom">
         <img src="./cappuccino-favorite.jpg" alt="Customer favorite creamy cappuccino">
         <h4>Cappuccino</h4>
-        <p>Velvety foam with a strong espresso base.</p>
+        <p>Velvety foam with a strong espresso base. Our signature cappuccino combines perfectly steamed milk with rich espresso 
+           and a delicate layer of microfoam art. Made with beans sourced from the highlands of Ethiopia, it offers notes of 
+           chocolate and caramel with a smooth finish.</p>
       </div>
       <div class="card-custom">
         <img src="./iced-latte-favorite.jpg" alt="Refreshing iced latte with milk foam">
         <h4>Iced Latte</h4>
-        <p>Cool, creamy, and perfectly balanced.</p>
+        <p>Cool, creamy, and perfectly balanced. Our iced latte features double-shot espresso poured over ice and topped with 
+           cold milk and a touch of sweetness. Available with your choice of regular, almond, soy, or oat milk to suit your 
+           dietary preferences.</p>
       </div>
       <div class="card-custom">
         <img src="./butter-croissant-favorite.jpg" alt="Freshly baked butter croissant">
         <h4>Butter Croissants</h4>
-        <p>Homemade croissants with crispy golden layers.</p>
+        <p>Homemade croissants with crispy golden layers. Baked fresh every morning using traditional French techniques and 
+           premium European butter. These flaky pastries are the perfect companion to your morning coffee or afternoon tea.</p>
       </div>
     </div>
     <a href="menue.html" class="btn-main">See Our Full Menu</a>
+  </section>
+
+  <!-- ===== OUR COFFEE SOURCING ===== -->
+  <section class="coffee-sourcing">
+    <h2>Our Commitment to Quality</h2>
+    <div class="sourcing-content">
+      <div class="sourcing-image">
+        <img src="./design-interior.jpg" alt="Premium coffee beans from sustainable farms">
+      </div>
+      <div class="sourcing-text">
+        <p>At Cozy Café Karachi, we believe that exceptional coffee begins with exceptional beans. That's why we've established 
+           direct relationships with coffee farmers in Colombia, Ethiopia, Brazil, and Guatemala. These partnerships ensure that 
+           we receive the highest quality beans while supporting sustainable farming practices and fair compensation for growers.</p>
+        
+        <p>Our coffee beans are carefully selected based on their flavor profile, growing conditions, and harvesting methods. 
+           Each batch is roasted in-house by our expert roasters who adjust their techniques to bring out the unique characteristics 
+           of each bean variety. This attention to detail results in a diverse menu of coffees that cater to different taste 
+           preferences, from bright and fruity to deep and chocolatey.</p>
+        
+        <p>We're committed to reducing our environmental footprint through various initiatives, including composting coffee grounds, 
+           using biodegradable packaging, and implementing energy-efficient equipment throughout our café. When you enjoy a cup 
+           of coffee at Cozy Café, you're not just treating yourself – you're supporting a more sustainable coffee industry.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ===== CUSTOMER REVIEWS ===== -->
@@ -93,17 +433,47 @@
     <h2>What Our Customers Say</h2>
     <div class="review-cards">
       <div class="review">
-        <p>“Best coffee spot in town! Their cappuccino is unbeatable.”</p>
+        <p>“Best coffee spot in town! Their cappuccino is unbeatable. I've been coming here since they opened, and the quality 
+           has always been exceptional. The baristas remember my name and my usual order. It's like my second home!”</p>
         <h4>- Ayesha R.</h4>
       </div>
       <div class="review">
-        <p>“Love the cozy atmosphere and friendly staff. Perfect place to unwind.”</p>
+        <p>“Love the cozy atmosphere and friendly staff. Perfect place to unwind after a long day at work. Their pastries are 
+           always fresh, and the WiFi is reliable for remote work. I've held several business meetings here, and my clients 
+           are always impressed.”</p>
         <h4>- Hamza K.</h4>
       </div>
       <div class="review">
-        <p>“Pastries are divine! Freshly baked and full of flavor.”</p>
+        <p>“Pastries are divine! Freshly baked and full of flavor. The almond croissant is my absolute favorite – crispy on the 
+           outside, soft on the inside, with just the right amount of sweetness. I also appreciate their commitment to using 
+           locally sourced ingredients.”</p>
         <h4>- Sana L.</h4>
       </div>
+      <div class="review">
+        <p>“As a coffee enthusiast, I'm impressed by their selection of single-origin beans. The pour-over coffee is prepared 
+           with precision, and the baristas are knowledgeable about flavor notes and brewing methods. This is definitely the 
+           best specialty coffee in Karachi!”</p>
+        <h4>- Ahmed M.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS & COMMUNITY ===== -->
+  <section class="events-community">
+    <h2>Community & Events</h2>
+    <div class="events-content">
+      <p>Cozy Café Karachi is more than just a place to enjoy great coffee – we're a community hub where connections are made 
+         and ideas flourish. Throughout the year, we host a variety of events including live acoustic music nights, poetry 
+         readings, art exhibitions featuring local artists, and coffee tasting workshops where you can learn more about the 
+         fascinating world of specialty coffee.</p>
+      
+      <p>Our café also serves as a co-working space during weekdays, with designated quiet areas for those who need to focus 
+         and collaborative zones for group projects. We offer special rates for students and freelancers who use our space 
+         regularly, making Cozy Café an affordable option for remote work.</p>
+      
+      <p>Join us for our monthly "Coffee & Conversation" events where community members gather to discuss topics ranging from 
+         sustainability to local culture. Follow us on social media to stay updated on upcoming events and special promotions. 
+         We look forward to welcoming you to our community!</p>
     </div>
   </section>
 
